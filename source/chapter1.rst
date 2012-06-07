@@ -7,10 +7,12 @@
 このExampleは、NGUIの一番重要なスクリプトの一つ「UIAnchor」です。シンプルなフォームで、このスクリプトは、それに接続されたゲームオブジェクトを自動的に配置するのに使用します。このスクリプトにはいくつかの用途があります：
 
 .. The main window is anchored to the center, with UIAnchor ofsetting it correctly by half a pixel to make the UI look scrisp on Windows machines.
-1. このメインウィンドウは、Windowsマシン上のUIのようなscrispを作る半分のピクセルによりそれを正しくUIAnchorのオフセットを用いている中央に固定されているアンカーです。
+1. このメインウィンドウは、Windowsマシン上のUIのようなscrisp [#f1]_ を作る半分のピクセルによりそれを正しくUIAnchorのオフセット [#f2]_ を用いている中央に固定されているアンカーです*。
 
-【訳注】原文のofsettingはoffsettingだと思います。
-【訳注】原文のscrispは不明
+.. rubric:: 脚注
+
+.. 【訳注】原文のofsettingはoffsettingだと思います。
+.. 【訳注】原文のscrispは不明
 
 .. Each one of the 8 buttons is anchored to the side or corner of the screen. They will stay in their respective spots even if the screen aspect ratio changes*.
 2. 8つのボタンが1つずつスクリーンの端や角に配置されています。それらのそれぞれの場所の中で、画面のアスペクト比が変更する場合でもご利用いただけます※。
