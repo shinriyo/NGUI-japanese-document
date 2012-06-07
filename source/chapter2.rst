@@ -15,13 +15,14 @@ HUDウィンドウベースのゲームでインタラクティブ、このよ�
 .. The camera that sees your object must have a UICamera script attached.
 1.このカメラは **UICamera** スクリプトが添付されているオブジェクトだけ見ることが出来ます。
 
+..  The object that wants to receive an event must have a collider. No need for it to be a widget. Any in-game object will work.
 2.このオブジェクトがコライダーを持っている必要があります。ウィジェットであるため必要はありません。どんなゲーム内のオブジェクトでも動作します。
 
 .. There are a variety of scripts under the Component/NGUI/Interaction menu that you can use:
 使用できる **Component/NGUI/Interaction** のメニューに様々なスクリプトがあります：
 
 .. For example in order to create an object that changes color on touch or mouse over, you can simply attach UIButtonColor script to its collider and specify what object it should be working with.
- 例えば、Exampleを引き継ぐタッチまたはマウスで色を変更するオブジェクトを作成するためには、単純にその衝突にUIButtonColorスクリプトを添付することができ、それが作業すべきかのオブジェクトを指定します。
+例えば、Exampleを引き継ぐタッチまたはマウスで色を変更するオブジェクトを作成するためには、単純にその衝突にUIButtonColorスクリプトを添付することができ、それが作業すべきかのオブジェクトを指定します。
 
 .. It doesn’t need to be a widget either — if you specify an object with a renderer or a light as its target, and it will also work just fine.
 これはウィジェットである必要もありません—レンダラや、そのターゲットとしてライトを持つオブジェクトを指定した場合も、うまく動作するでしょう。
@@ -30,10 +31,10 @@ HUDウィンドウベースのゲームでインタラクティブ、このよ�
 オブジェクトをわずかに成長したいですか？
 
 .. UIButtonScale. Move? UIButtonOffset. You can activate remote disabled Tween components by using UIButtonTween.
-UIButtonScale。動きますか？ UIButtonOffsetです。UIButtonTweenを使用して、リモートのdisabledのTweenコンポーネントをアクティブにすることができます。
+**UIButtonScale** です。動かしますか？ **UIButtonOffset** です。 **UIButtonTween** を使用して、リモートのdisabledのTweenコンポーネントをアクティブにすることができます。
 
 .. You can even make it possible to drag an object around by attaching UIDragObject script to the collider and specifying what it should be dragging.
-それが可能なコライダーにUIDragObjectスクリプトを添付し、それをドラッグすべきかを指定することによって、周りのオブジェクトをドラッグすることさえもできます。
+それが可能なコライダーに **UIDragObject** スクリプトを添付し、それをドラッグすべきかを指定することによって、周りのオブジェクトをドラッグすることさえもできます。
 
 .. You can look at Example 7 to see how this script was used to make an interactable scroll list.
 このスクリプトはinteractableスクロールリストを作成するために使用された方法を確認するためにExample7で見ることができます。

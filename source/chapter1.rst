@@ -11,8 +11,8 @@
 
 .. rubric:: 脚注
 
-.. 【訳注】原文のofsettingはoffsettingだと思います。
-.. 【訳注】原文のscrispは不明
+.. [#f1] 【訳注】原文のofsettingはoffsettingだと思います。
+.. [#f2] 【訳注】原文のscrispは不明
 
 .. Each one of the 8 buttons is anchored to the side or corner of the screen. They will stay in their respective spots even if the screen aspect ratio changes*.
 2. 8つのボタンが1つずつスクリーンの端や角に配置されています。それらのそれぞれの場所の中で、画面のアスペクト比が変更する場合でもご利用いただけます※。
@@ -24,3 +24,5 @@
 **UIStretch** スクリプトもTIledSpriteにの背景にアタッチされて使用されています。このスクリプトはスクリーンのサイズにあわせてウィジットを引き伸ばすことが出来ます。
 
 ※Unityの現在の動作は、ゲームウィンドウの寸法を変更すると、編集モードでは、スクリプト上のアップデートをトリガしないことにご注意下さい。つまり、何か変更したりPlayを単に押す（または[Ctrl] + [S]キーを単に2回押す）までUIが正しく更新されません。Playモードのとき、すべてが期待どおりに動作します。
+
+.. image:: ../images/ex0.jpeg

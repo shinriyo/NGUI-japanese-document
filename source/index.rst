@@ -12,7 +12,18 @@ Contents:
    :maxdepth: 2
 
    chapter1.rst
+   chapter2.rst
+   chapter5.rst
+   chapter8.rst
+   chapter12.rst
+   chapter13.rst
 
+.. 3.Main Menu
+.. 4.Controller Input
+.. 7.Scroll View（パネル）
+.. 9.Fancy Quest Log
+.. 10.Localization
+.. 11.Drag & Drop
 
 Indices and tables
 ==================
