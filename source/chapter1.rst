@@ -9,11 +9,6 @@
 .. The main window is anchored to the center, with UIAnchor ofsetting it correctly by half a pixel to make the UI look scrisp on Windows machines.
 1. このメインウィンドウは、Windowsマシン上のUIのようなscrisp [#f1]_ を作る半分のピクセルによりそれを正しくUIAnchorのオフセット [#f2]_ を用いている中央に固定されているアンカーです*。
 
-.. rubric:: 脚注
-
-.. [#f1] 【訳注】原文のofsettingはoffsettingだと思います。
-.. [#f2] 【訳注】原文のscrispは不明
-
 .. Each one of the 8 buttons is anchored to the side or corner of the screen. They will stay in their respective spots even if the screen aspect ratio changes*.
 2. 8つのボタンが1つずつスクリーンの端や角に配置されています。それらのそれぞれの場所の中で、画面のアスペクト比が変更する場合でもご利用いただけます※。
 
@@ -26,3 +21,8 @@
 ※Unityの現在の動作は、ゲームウィンドウの寸法を変更すると、編集モードでは、スクリプト上のアップデートをトリガしないことにご注意下さい。つまり、何か変更したりPlayを単に押す（または[Ctrl] + [S]キーを単に2回押す）までUIが正しく更新されません。Playモードのとき、すべてが期待どおりに動作します。
 
 .. image:: ../images/ex0.jpeg
+
+.. rubric::
+
+.. [#f1] 【訳注】原文のofsettingはoffsettingだと思います。
+.. [#f2] 【訳注】原文のscrispは不明
