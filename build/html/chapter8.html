@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>8.Scroll View（2番目のカメラ） &mdash; NGUI DOCUMENT 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="NGUI DOCUMENT 0.0.1 documentation" href="index.html" />
+    <link rel="next" title="12.Chat Window" href="chapter12.html" />
+    <link rel="prev" title="5.Lights and Refraction" href="chapter5.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="chapter12.html" title="12.Chat Window"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="chapter5.html" title="5.Lights and Refraction"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">NGUI DOCUMENT 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scroll-view-2">
+<h1>8.Scroll View（2番目のカメラ）<a class="headerlink" href="#scroll-view-2" title="Permalink to this headline">¶</a></h1>
+<p>このExampleでは、単純に画面の一部に描画し、2番目のカメラを持っていることによってスクロールビューを作成する方法を示しています。これは非常に高速で、シェーダの使用が含まれていませんので、2DのUIでスクロールビューを処理するのに理想的なアプローチであり、iPhone 1、2、3Gなどの古い機器に適しています。しかし、非常に重大な2つの欠点があります：</p>
+<ol class="arabic simple">
+<li>2Dに限定されています。</li>
+</ol>
+<ol class="arabic simple" start="2">
+<li>回転させたりオフスクリーンに移動することはできません。それを行いたい場合は、まず最初に、スクロールビューの内容をフェードアウトする必要があります。これらの制限と問題がない場合は、このリストを、どこへでも動かすことができるでしょう。</li>
+</ol>
+<p>もっと何かしたい場合は...そしてあなたの最善の策ではなく、 <strong>UIPanel’s Clipping</strong> を介して同じスクロールビューシステムを実装する方法を示しています。前のExmapleに固執することです。しかし...本筋を離れます。どのようにExample動作するかに戻りましょう。</p>
+<p>このリストでは、2つのカメラがあります。 <strong>Main Camera</strong> は、メインウィンドウの描画の世話をスクロールビューの左上と右下のコーナーを指定しているゲームオブジェクトのペアがありまます。2番目のカメラは、オフスクリーンに位置し、UI（このアイテムはスクロールのリストの中にある）の別の部分を描画しています。</p>
+<p><strong>UIViewport</strong> スクリプトは便利な2つのゲームオブジェクトで指定された画面の一部に描画するために必要な手順の背後にあるすべての数学を扱うと、欠けている、すべてのマウスでスクロールビューの項目を移動する機能です。これは実際には、シーン内のコライダー（背景、アイテム）に接続されている <strong>UIDragCamera</strong> スクリプト経由ではなくカメラを移動することで実現しています。このスクリプトは、2番目のカメラに取り付け <strong>UIDraggableCamera</strong> スクリプトを示し、そのスクリプト上ではウィジェットの境界のために考慮する <strong>Root</strong> と同様の動きを <strong>Scale</strong> で指定することができます（この場合、 <tt class="docutils literal"><span class="pre">X</span></tt> が <tt class="docutils literal"><span class="pre">1</span></tt> のときはX上での完全な動作、 <tt class="docutils literal"><span class="pre">0</span> <span class="pre">=</span></tt> はY軸で動かないことを意味します）。また、使用するエフェクトを指定することができます、タッチを離すと運動量が適用されます。</p>
+<p>概していえば、これは <strong>UIDraggablePanel</strong> よりもはるかに小さいスクリプトであり、そういうものとしてより少ない機能を備えています。明るい面では、より少ないコードは、何か起こったときに変更が容易であることを意味します。</p>
+<img alt="images/example2.jpeg" src="images/example2.jpeg" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="chapter5.html"
+                        title="previous chapter">5.Lights and Refraction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="chapter12.html"
+                        title="next chapter">12.Chat Window</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="sources/chapter8.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="chapter12.html" title="12.Chat Window"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="chapter5.html" title="5.Lights and Refraction"
+             >previous</a> |</li>
+        <li><a href="index.html">NGUI DOCUMENT 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, shinriyo.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

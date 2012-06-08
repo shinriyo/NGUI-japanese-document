@@ -1,0 +1,135 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.Interaction &mdash; NGUI DOCUMENT 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="NGUI DOCUMENT 0.0.1 documentation" href="index.html" />
+    <link rel="next" title="5.Lights and Refraction" href="chapter5.html" />
+    <link rel="prev" title="1.UIAnchor" href="chapter1.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="chapter5.html" title="5.Lights and Refraction"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="chapter1.html" title="1.UIAnchor"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">NGUI DOCUMENT 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="interaction">
+<h1>2.Interaction<a class="headerlink" href="#interaction" title="Permalink to this headline">¶</a></h1>
+<p>このExmapleは3DシーンのUIを簡単にしてくれるのを示します。NGUIは簡単にメッシュを生成してくれるので、シーン上に自由に配置できます。</p>
+<p>HUDウィンドウベースのゲームでインタラクティブ、このようなWorld of WarcraftのからScrolling Combat Text <a class="footnote-reference" href="#f1" id="id1">[1]</a> などの動的な効果を、考えられるものは何でも作成することができます。</p>
+<p>それは相互作用に来るとき、NGUIのイベントシステムはたった2つだけの条件で、非常に柔軟であることがわかります。</p>
+<ol class="arabic simple">
+<li>このカメラは <strong>UICamera</strong> スクリプトがアタッチされているオブジェクトだけ見ることが出来ます。</li>
+</ol>
+<ol class="arabic simple" start="2">
+<li>このオブジェクトがコライダーを持っている必要があります。ウィジェットである必要はありません。どんなゲーム内のオブジェクトでも動作します。</li>
+</ol>
+<img alt="images/interaction.jpeg" src="images/interaction.jpeg" />
+<p>使用可能な <strong>Component/NGUI/Interaction</strong> のメニューに様々なスクリプトがあります：</p>
+<p>例えばタッチやマウスオーバーで色を変更するオブジェクトを作成するためには、単にそのコライダーに <strong>UIButtonColor</strong> スクリプトをアタッチし、それが作業すべきであろうオブジェクトを指定することができます。これはウィジェットである必要もありません—レンダラや、そのターゲットとしてライトを持つオブジェクトを指定した場合も、うまく動作するでしょう。</p>
+<p>オブジェクトを少しばかりグローしたいですか？ <strong>UIButtonScale</strong> です。動かしますか？ <strong>UIButtonOffset</strong> です。 <strong>UIButtonTween</strong> を使用して、リモートの <tt class="docutils literal"><span class="pre">disabled</span></tt> の <tt class="docutils literal"><span class="pre">Tween</span></tt> コンポーネントをアクティブにすることができます。それが可能なコライダーに <strong>UIDragObject</strong> スクリプトをアタッチし、それをドラッグすべきかを指定することによって、周りのオブジェクトをドラッグすることさえもできます。このスクリプトはインタラクティブ可能なスクロールリストを作成するために使用された方法をExample 7で確認できます。</p>
+<p>しかし、このExampleでは、基本線でいきます：このボタンは、その位置変更を行う、キューブとウィンドウ上のリモートのトゥイーンアニメーションをトリガします。</p>
+<p>それは、カスタムイベントスクリプトを作成時に、NGUIは出来るだけシンプルにしてくれます。単にイベントのページに記載のいずれかの関数を実装し <tt class="docutils literal"><span class="pre">MonoBehaviour</span></tt> を作成し、選択する自身のコライダーを取り付けます。</p>
+<p>例えば、それがアタッチされているコライダーをクリックしたとき、次のスクリプトはデバッガへ &#8220;Hello World！&#8221;と表示します。</p>
+<a class="reference internal image-reference" href="images/example1.jpeg"><img alt="images/example1.jpeg" src="images/example1.jpeg" style="width: 100.0px; height: 295.5px;" /></a>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>【訳注】通称SCTのアドオン。自キャラの頭の上にダメージやHealで回復した量、敵から受けたDebuff（弱体魔法）、Parry、Dodge、Blockの発動など自分が受けた効果をすべて画面に表示してくれ、戦闘画面が適度に賑やかになって、なおかつ自分の受けた効果が分かりやすくなる。</td></tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="chapter1.html"
+                        title="previous chapter">1.UIAnchor</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="chapter5.html"
+                        title="next chapter">5.Lights and Refraction</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="sources/chapter2.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="chapter5.html" title="5.Lights and Refraction"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="chapter1.html" title="1.UIAnchor"
+             >previous</a> |</li>
+        <li><a href="index.html">NGUI DOCUMENT 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, shinriyo.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

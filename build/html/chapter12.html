@@ -1,0 +1,134 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>12.Chat Window &mdash; NGUI DOCUMENT 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="NGUI DOCUMENT 0.0.1 documentation" href="index.html" />
+    <link rel="next" title="13.Character Inventory ※アセットの中のシーンは13ではなくXです。" href="chapter13.html" />
+    <link rel="prev" title="8.Scroll View（2番目のカメラ）" href="chapter8.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="chapter13.html" title="13.Character Inventory ※アセットの中のシーンは13ではなくXです。"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="chapter8.html" title="8.Scroll View（2番目のカメラ）"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">NGUI DOCUMENT 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="chat-window">
+<h1>12.Chat Window<a class="headerlink" href="#chat-window" title="Permalink to this headline">¶</a></h1>
+<p>このExampleでは、単純なチャットウィンドウを作成する方法を示します。チャットウィンドウは2つの主要コンポーネントで構成されています。</p>
+<ol class="arabic simple">
+<li>ユーザーが何かを入力することができます入力フィールド。</li>
+</ol>
+<ol class="arabic simple" start="2">
+<li>テキストとエリア。</li>
+</ol>
+<p>入力フィールドは簡単で、7番目のチュートリアルでカバーされていますが、テキストエリアですか？同様にシンプルです、実際に： <strong>UITextList</strong> です。このスクリプトでは、動的にテキスト行を作成し、 <tt class="docutils literal"><span class="pre">TextStyle</span></tt> （ <tt class="docutils literal"><span class="pre">scroll</span></tt> の <tt class="docutils literal"><span class="pre">position</span></tt> が <tt class="docutils literal"><span class="pre">0</span></tt> はトップ）、または <tt class="docutils literal"><span class="pre">Chat</span> <span class="pre">Style</span></tt> （  <tt class="docutils literal"><span class="pre">scroll</span></tt> の <tt class="docutils literal"><span class="pre">position</span></tt> が <tt class="docutils literal"><span class="pre">0</span></tt> はボトム）でそれらをアレンジすることができます。</p>
+<p>今、おそらくこのスクリプトは実際に任意のラベルを作成 <strong>しない</strong> ことに言及する必要があります。それは単にあなたが指定した既存のラベルで動作し、そのテキストエントリの独自のリストと現在の <tt class="docutils literal"><span class="pre">scroll</span></tt> を使用して、その内容を埋めます。また、テキストエリアの大きさだけでなく、それらがリサイクルの取得を開始する前に段落の最大数を指定することができます（最新を作成するために再利用されている最古のものを含む）。</p>
+<p>スクロールは <strong>UITextList</strong> に組み込まれた別の機能によって達成されていますが、スクリプトのチェックボックスを経由してオフにすることができます。</p>
+<p>最後になりましたが、実際の入力のアクティブ化は、 <strong>ChatInput</strong> を介して処理されます - このExampleのためにカスタムスクリプトが書かれています。それは、わずか70行のかなり短いです - すべては内部にあります：</p>
+<ol class="arabic simple">
+<li><strong>Start()</strong> 上でいくつかのダミーデータを使用して <strong>Text List</strong> をに集めます。</li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><strong>Enter</strong> キーが押された場合は、 <strong>Enter</strong> を選択します。</li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><strong>OnSubmit()</strong> メソッドメッセージ（入力フィールドで送信された）受信される入力フィールドのテキストを <strong>UITextList.Add</strong> のコールすることで、入力フィールドのテキストをクリアします。</li>
+</ol>
+<p>最終結果ですか？すべてのデバイス上で動作する（少し醜いとはいえ）チャットウィンドウは完全に機能します。</p>
+<img alt="images/example4.jpeg" src="images/example4.jpeg" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="chapter8.html"
+                        title="previous chapter">8.Scroll View（2番目のカメラ）</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="chapter13.html"
+                        title="next chapter">13.Character Inventory　※アセットの中のシーンは13ではなくXです。</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="sources/chapter12.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="chapter13.html" title="13.Character Inventory ※アセットの中のシーンは13ではなくXです。"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="chapter8.html" title="8.Scroll View（2番目のカメラ）"
+             >previous</a> |</li>
+        <li><a href="index.html">NGUI DOCUMENT 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, shinriyo.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
