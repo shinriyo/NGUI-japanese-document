@@ -17,7 +17,7 @@ HUDウィンドウベースのゲームでインタラクティブ、このよ�
 ..  The object that wants to receive an event must have a collider. No need for it to be a widget. Any in-game object will work.
 2. このオブジェクトがコライダーを持っている必要があります。ウィジェットである必要はありません。どんなゲーム内のオブジェクトでも動作します。
 
-.. image:: ../images/interaction.jpg
+.. image:: ../images/interaction.jpeg
 
 .. There are a variety of scripts under the Component/NGUI/Interaction menu that you can use:
 使用可能な **Component/NGUI/Interaction** のメニューに様々なスクリプトがあります：
@@ -49,7 +49,7 @@ HUDウィンドウベースのゲームでインタラクティブ、このよ�
        }
    }
 
-.. image:: ../images/ex1.jpeg
+.. image:: ../images/example1.jpeg
 
 .. rubric::
 
